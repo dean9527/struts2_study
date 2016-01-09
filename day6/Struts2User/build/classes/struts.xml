@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <package name="default" namespace="/" extends="struts-default">
+    	<!-- default method value is execute, 
+    	method="login" means the login will be executed in the LoginAction -->
+    	<action name="loginAction" class="com.dean.struts2.LoginAction" method="login">
+    		<result name="success">/success.jsp</result>
+    	</action>
+    	<action name="addAction" class="com.dean.struts2.LoginAction" method="add">
+    		<result name="success">/success.jsp</result>
+    	</action>
+    	<action name="updateAction" class="com.dean.struts2.LoginAction" method="update">
+    		<result name="success">/success.jsp</result>
+    	</action>
+    	<action name="deleteAction" class="com.dean.struts2.LoginAction" method="delete">
+    		<result name="success">/success.jsp</result>
+    	</action>
+    </package>
+
+</struts>
