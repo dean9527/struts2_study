@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <package name="mypackage" namespace="/" extends="struts-default">
+    	<interceptors>
+    		<interceptor name="myInterceptor" class="com.dean.interceptor.MyInterceptor"></interceptor>
+			<interceptor-stack name="myInterceptorStack">
+				<interceptor-ref name="defaultStack"/>
+				<interceptor-ref name="myInterceptor"/>
+			</interceptor-stack>
+    	</interceptors>
+		
+    	<!-- default method value is execute, 
+    	method="login" means the login will be executed in the LoginAction -->
+    	<action name="loginAction" class="com.dean.struts2.LoginAction" method="login">
+    		<result name="success">/success.jsp</result>
+			<interceptor-ref name="myInterceptorStack"/>
+    	</action>
+    </package>
+
+</struts>
